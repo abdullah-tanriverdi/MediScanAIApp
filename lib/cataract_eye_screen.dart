@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tflite/flutter_tflite.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-import 'package:mediscanaiapp/flu_info_screen.dart';
 import 'dart:developer' as devtools;
 
 import 'package:mediscanaiapp/info_screen.dart';
+import 'package:mediscanaiapp/cataract_info_screen.dart';
 
-class FluEyeScreen extends StatefulWidget {
-  const FluEyeScreen({super.key});
+class CataractEyeScreen extends StatefulWidget {
+  const CataractEyeScreen({super.key});
 
   @override
-  State<FluEyeScreen> createState() => _FluEyeScreenState();
+  State<CataractEyeScreen> createState() => _CataractEyeScreenState();
 }
 
-class _FluEyeScreenState extends State<FluEyeScreen> {
+class _CataractEyeScreenState extends State<CataractEyeScreen> {
   File? filepath;
   String label = '';
   double confidence = 0.0;
@@ -22,8 +22,8 @@ class _FluEyeScreenState extends State<FluEyeScreen> {
   //Modelin yüklenmesi
   Future<void> _tfLteInit() async {
     await Tflite.loadModel(
-      model: "assets/flu_eye_model.tflite", //model parametresi
-      labels: "assets/flu_labels.txt", // model etiketleri
+      model: "assets/cataract_eye_model.tflite", //model parametresi
+      labels: "assets/cataract_labels.txt", // model etiketleri
       numThreads: 1, // performans için kullanacağı thread
       isAsset: true, // modelin assets klasöründen yüklendiğini belirtir
       useGpuDelegate: false, // true -> gpu , false -> cpu
@@ -350,10 +350,13 @@ class _FluEyeScreenState extends State<FluEyeScreen> {
                   const SizedBox(height: 16),
                   ElevatedButton.icon(
                     onPressed: () {
+                      // Sağlık bilgisi sayfasına yönlendiriyoruz
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => FluInfoScreen(),
+                          builder:
+                              (context) =>
+                                  const CataractInfoScreen(), // Sağlık bilgisi sayfası
                         ),
                       );
                     },
@@ -388,7 +391,7 @@ class _FluEyeScreenState extends State<FluEyeScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
-                      elevation: 0,
+                      elevation: 0, // Gölgeleme kaldırıldı
                       padding: const EdgeInsets.symmetric(
                         horizontal: 20.0,
                         vertical: 10.0,

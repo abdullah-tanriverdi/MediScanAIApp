@@ -34,9 +34,7 @@ class InfoScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
 
             children: [
-
               Center(
-
                 child: const Text(
                   'Information About Artificial Intelligence Predictions',
                   style: TextStyle(
@@ -48,7 +46,6 @@ class InfoScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
 
-
               Card(
                 elevation: 4,
                 shape: RoundedRectangleBorder(
@@ -57,20 +54,18 @@ class InfoScreen extends StatelessWidget {
                 color: Colors.teal.shade50,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                    child: const Text(
-                      'These diagnoses are predictions made by an artificial intelligence model trained on specific data. '
-                          'Artificial intelligence makes these predictions based on large datasets, but the accuracy of the model depends on the quality of the data used.',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                        height: 1.6,
-                      ),
-                    )
-
+                  child: const Text(
+                    'These diagnoses are predictions made by an artificial intelligence model trained on specific data. '
+                    'Artificial intelligence makes these predictions based on large datasets, but the accuracy of the model depends on the quality of the data used.',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black87,
+                      height: 1.6,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
-
 
               Row(
                 children: [
@@ -83,7 +78,7 @@ class InfoScreen extends StatelessWidget {
                   Expanded(
                     child: const Text(
                       "Important: It is strongly recommended to consult a specialist doctor for a definitive diagnosis in the case of such diseases. "
-                          "Artificial intelligence is only an assisting tool, and for a real diagnosis, you must consult a healthcare professional.",
+                      "Artificial intelligence is only an assisting tool, and for a real diagnosis, you must consult a healthcare professional.",
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.red,
@@ -94,12 +89,10 @@ class InfoScreen extends StatelessWidget {
                   ),
                 ],
               ),
-
             ],
           ),
         ),
       ),
     );
   }
-
 }

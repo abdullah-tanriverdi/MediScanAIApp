@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mediscanaiapp/flu_eye_screen.dart';
 import 'package:mediscanaiapp/info_screen.dart';
+import 'package:mediscanaiapp/cataract_eye_screen.dart';
+import 'package:mediscanaiapp/lung_tomography_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,8 +11,23 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<CardItem> items = [
       CardItem(
+        title: "Cataract Eye",
+        description:
+            "Detect cataracts with a quick eye test. For more details, visit the full section.",
+        assetPath: "assets/cataract_eye.png",
+        destinationScreen: const CataractEyeScreen(),
+      ),
+      CardItem(
+        title: "Lung Tomography",
+        description:
+            "We detect lung conditions through advanced tomography scans. For more details, visit the full section.",
+        assetPath: "assets/lung_tomography.png",
+        destinationScreen: const LungTomographyScreen(),
+      ),
+      CardItem(
         title: "Flu Eye",
-        description: "Detect eye flu with a simple test. For more info, visit the details section.",
+        description:
+            "Detect eye flu with a simple test. For more info, visit the details section.",
         assetPath: "assets/flu_eye.png",
         destinationScreen: const FluEyeScreen(),
       ),
@@ -37,7 +54,10 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.health_and_safety_outlined, color: Colors.white),
+            icon: const Icon(
+              Icons.health_and_safety_outlined,
+              color: Colors.white,
+            ),
             onPressed: () {
               Navigator.push(
                 context,
@@ -47,7 +67,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-
 
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
@@ -66,7 +85,10 @@ class HomeScreen extends StatelessWidget {
               height: 200,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.teal.withOpacity(0.7), width: 2),
+                border: Border.all(
+                  color: Colors.teal.withOpacity(0.7),
+                  width: 2,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.teal.withOpacity(0.2),
@@ -140,4 +162,3 @@ class CardItem {
     required this.destinationScreen,
   });
 }
-

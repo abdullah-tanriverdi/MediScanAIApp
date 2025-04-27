@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mediscanaiapp/info_screen.dart';
 
-class FluInfoScreen extends StatelessWidget {
-  const FluInfoScreen({Key? key}) : super(key: key);
+class LungInfoScreen extends StatelessWidget {
+  const LungInfoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,13 +46,25 @@ class FluInfoScreen extends StatelessWidget {
         child: Column(
           children: [
             ConditionCard(
-              title: 'Flu',
-              image: 'assets/flu.png',
+              title: 'Pneumothorax',
+              image: 'assets/pneumothorax.png',
               description:
-                  'Conjunctivitis, also known as pink eye, is an inflammation or infection of the conjunctiva, the thin clear tissue that lines the white part of the eyeball. It can cause redness, itching, and discharge from the eyes. It is highly contagious and can be caused by bacteria, viruses, or allergens.',
+                  'A pneumothorax occurs when air leaks into the space between your lung and chest wall.',
             ),
-
             const SizedBox(height: 16),
+            ConditionCard(
+              title: 'Pneumonia',
+              image: 'assets/pneumonia.png',
+              description:
+                  'Pneumonia is an infection that inflames the air sacs in one or both lungs.',
+            ),
+            const SizedBox(height: 16),
+            ConditionCard(
+              title: 'Tuberculosis',
+              image: 'assets/tuberculosis.png',
+              description:
+                  'Tuberculosis is a bacterial infection that primarily affects the lungs.',
+            ),
           ],
         ),
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mediscanaiapp/info_screen.dart';
 
-class FluInfoScreen extends StatelessWidget {
-  const FluInfoScreen({Key? key}) : super(key: key);
+class CataractInfoScreen extends StatelessWidget {
+  const CataractInfoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +46,10 @@ class FluInfoScreen extends StatelessWidget {
         child: Column(
           children: [
             ConditionCard(
-              title: 'Flu',
-              image: 'assets/flu.png',
+              title: 'Cataract',
+              image: 'assets/cataract.png',
               description:
-                  'Conjunctivitis, also known as pink eye, is an inflammation or infection of the conjunctiva, the thin clear tissue that lines the white part of the eyeball. It can cause redness, itching, and discharge from the eyes. It is highly contagious and can be caused by bacteria, viruses, or allergens.',
+                  'A cataract is a clouding of the lens in the eye, leading to a decrease in vision. It is common in older adults and can cause blurry vision, difficulty seeing at night, and sensitivity to light.',
             ),
 
             const SizedBox(height: 16),
